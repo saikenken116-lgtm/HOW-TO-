@@ -1,0 +1,30 @@
+<!-- // dom object not visible on page : append(); prepend().... -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">add student</button>
+
+
+    <script>
+        const btn = document.getElementById('btn')
+
+
+        btn.addEventListener("click",()=>{
+            for(let i=0;i<1;i++){
+            const newstd = document.createElement("h3")
+            console.log(newstd)
+            newstd.innerText = "new std added"
+            document.body.append(newstd)
+        }
+        }) 
+    </script>
+    
+</body>
+</html>

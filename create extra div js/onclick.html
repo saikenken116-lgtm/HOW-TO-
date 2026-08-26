@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+        }
+        button{
+            height:190px ;
+            width: 370px;
+            font-size: 70px;
+        }
+        .newmem{
+            font-size: 20px;
+            height: 100vh;
+            width: 100vh;
+            border: 2px solid black;
+
+        }
+    </style>
+</head>
+<body>
+    <button onclick="creatediv()">create new element</button>
+    <div class="newmem"></div>
+    <script>
+        let mem = document.querySelector(".newmem")
+        let count = 1;
+
+        function creatediv(){
+            let newdiv = document.createElement("div")
+              console.log(newdiv)
+              newdiv.textContent = `new div #${count++}`
+              newdiv.classList.add("box")
+              newdiv.style.height="110px"
+              newdiv.style.width="190px"
+              newdiv.style.border="5 px solid black"
+
+              mem.appendChild(newdiv)
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
