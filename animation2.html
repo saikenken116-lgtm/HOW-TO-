@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container {
+        background-color: rgb(11, 51, 85);
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px;
+        border: 7px solid black;
+        height: 300vh;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .box1 {
+        background-color: slateblue;
+        height: 150px;
+        width: 150px;
+        border: 15px solid blue;
+        border-radius:50% ;
+        transition: all 0.5s ease-in-out,background-color 1s ease;
+    }
+    .box1:hover{
+        border-radius: 15px;
+        background-color: brown;
+        border: 4px solid orange;
+        transform: scale(0.75);
+
+    }
+    .box2 {
+       background-color: rgb(107, 44, 232);
+        height: 150px;
+        width: 150px;
+        border: 1px solid black;
+        transition: transform 1s ease,background-color 1s ease;
+
+    }
+    .box2:hover {
+        background-color: rgb(232, 133, 52);
+        transform: scale(1.5) rotate(180deg) skew(15deg);
+    }
+    .box3 {
+        background-color: rgb(41, 217, 248);
+        height: 150px;
+        width: 150px;
+        border: 4px solid rgb(101, 119, 235);
+        transition: transform 1s ease-in, background-color 1s ease;
+    }
+    .box3:hover {
+        background-color: rgb(48, 249, 138);
+        transform: scale(1.5) rotate(180deg) skew(15deg);
+
+    }
+    .box4 {
+        background-color: rgb(244, 21, 21);
+        height: 150px;
+        width: 150px;
+        border: 4px solid black;
+        transition: transform 1s ease-out ,background-color 1s ease;
+    }
+    .box4:hover {
+        background-color: brown;
+         transform: scale(1.5) rotate(180deg) skew(15deg);
+
+    }
+    .box5 {
+        background-color: aliceblue;
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+        border: 4px solid black;
+        transition: transform 1s ease-in-out , background-color 1s ease;
+    }
+    .box5:hover {
+        background-color: rgb(76, 76, 76);
+        transform: scale(1.5) rotate(180deg) skew(15deg);
+
+    }
+    .box6 {
+        height: 150px;
+        width: 150px;
+        border: 4px solid black;
+        transition: transform 1s linear;
+    }
+    .box6:hover {
+        transform: scale(1.5) rotate(180deg) skew(15deg);
+
+    }
+    .box7 {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        height: 450px;
+        width: 450px;
+        border: 4px solid black;
+    }
+    .item1,.item2,.item3,.item4{
+        height: 50px;
+        width: 50px;
+        border: 2px solid black;
+    }
+    .box7 .item1 {
+        background-color: rgb(239, 25, 25);
+        transition: transform 1s ease;
+    }
+    .box7 .item2 {
+        background-color: rgb(213, 255, 28);
+        transition: transform 1s ease-in;
+    }
+    .box7 .item3 {
+        background-color: rgb(21, 197, 12);
+        transition: transform 1.5s ease-out;
+    }
+    .box7 .item4 {
+        background-color: rgb(18, 88, 238);
+        transition: transform 1s linear;
+    }
+    .box7:hover .item1 {
+        transform: translateX(400px);
+    }
+    .box7:hover .item2 {
+        transform: translateX(400px) rotate(180deg);
+    }
+    .box7:hover .item3 {
+        transform: translateX(400px) scale(1.5);
+    }
+    .box7:hover .item4 {
+        transform: translateX(400px) rotate(360deg) scale(0.75);
+    }
+
+</style>
+<body>
+    <div class="container">
+    <div class="box1">1</div>  
+    
+    
+    <div class="box2">2</div>
+    
+    
+    <div class="box3">3</div>
+    
+    
+    <div class="box4">4</div>
+   
+   
+    <div class="box5">5</div>
+    
+    
+    <div class="box6">6</div>
+   
+   
+    <div class="box7">
+        <div class="item1">i1</div>
+        <div class="item2">i2</div>
+        <div class="item3">i3</div>
+        <div class="item4">i4</div>
+    </div>
+
+    </div>
+    
+</body>
+</html>
