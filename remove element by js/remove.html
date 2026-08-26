@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            background-color: rgb(9, 39, 64);
+        }
+        .container{
+            font-style:oblique;
+            display: flex;
+            justify-content: space-evenly;
+            flex-direction: column;
+            align-items: center;
+
+            background-color: rgb(18, 110, 191);
+            border-radius: 25px;
+            height: 500px;
+            width: 600px;
+            border: 7px solid rgb(120, 35, 35);
+
+        }
+        .btn{
+            background-color: rgb(173, 206, 235);
+            height: 50px;
+            width: 150px;
+            border-radius: 50%;
+            transition: transform 2s ease-in-out,background-color 1s ease;
+        }
+        .btn:hover{
+            transform: scale(1.2);
+            background-color:rgb(13, 63, 149);
+        }
+        .btn2{
+            border-radius: 50%;
+            height: 50px;
+            width: 150px;
+            transition: transform 2s ease-in-out,background-color 1s ease;
+        }
+        .btn2:hover{
+            transform: scale(1.2);
+            background-color:rgb(103, 107, 235);
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="item1">
+            <h2>remove the element in givin list</h2>
+        </div>
+        <br>
+        <button class="btn">REMOVE the first child</button>
+        <button class="btn2">REMOVE the last child</button>
+        <br>
+        <div class="item2">
+            <ul>
+                <li>1</li>
+                <li>2</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script>
+        const btn = document.querySelector(".btn")
+        const div3 = document.querySelector(".item2 ul")
+        const p1 = document.createElement("li")
+        p1.innerText = "HTML"
+        div3.append(p1)
+
+            const p2 = document.createElement("li")
+            const p3 = document.createElement("li")
+            const p4 = document.createElement("li")
+            p2.innerText = "JS"
+            p3.innerText = "REACTL"
+            p4.innerText = "NODE"
+            div3.append(p2,p3,p4)
+
+
+            btn.addEventListener("click", () => {
+                div3.firstElementChild?.remove()
+            })
+            const btn2 = document.querySelector(".btn2")
+            btn2.addEventListener("click", ()=>{
+                div3.removeChild(div3.lastChild)
+            })
+    </script>
+</body>
+</html>
