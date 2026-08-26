@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <heading id="head">elemnet</heading>
+    <button id="btnr">remove this</button>
+    <div id="cons">
+        <h3>list</h3>
+        <p>1</p>
+        <p>2</p>
+        <ul id="list">
+            <li>HTML</li>
+            <li>CSS</li>
+        </ul>
+    </div>
+
+
+
+
+    <script>
+        const cons=document.getElementById("cons")
+        const p1 = document.createElement("p")
+        const p2 = document.createElement("p")
+
+        
+        p1.innerText = "HTML"
+        cons.append(p1)
+        p2.innerText = "CSS"
+        cons.appendChild(p2)
+
+
+        const p3 = document.createElement("p")
+        const p4 = document.createElement("p")
+        const p5= document.createElement("p")
+        p3.innerText = "JS"
+        p4.innerText = "REACTL"
+        p5.innerText = "NODE"
+
+        cons.append(p3,p4,p5)
+
+        const list = document.getElementById("list")
+        const li = document.createElement("li")
+        li.innerText = "NODE"
+        list.insertBefore(li,list.children[1])
+
+
+        const p6 = document.createElement("p")
+        p6.innerText = "NODEjs"
+        list.prepend(p6)
+
+        
+        
+        const head = document.getElementById("head")
+        const btn =document.getElementById("btnr")
+        btn.addEventListener("click",()=>{
+            list.removeChild(list.firstChild)
+        })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
