@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            gap: 10px;
+            border: 2px solid black;
+            height: 500px;
+            width: 500px;
+            display: grid;
+            grid-template-columns: repeat(4,1fr) ;
+            grid-template-rows: repeat(4,1fr);
+
+            grid-template-areas: 
+            "one one two two"
+            "one one two two"
+            "three four four three"
+            "three four four three";
+        }
+        .item1{
+            background-color:BLUE ;
+            grid-area: 1/2;
+
+        }
+        .item2{
+            background-color: bisque;
+            grid-area: two;
+
+        }
+        .item3{
+            background-color: black;
+            grid-area: three;
+
+        }
+        .item4{
+            background-color: blueviolet;
+            grid-area: four;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item1"></div>
+        <div class="item2"></div>
+        <div class="item3"></div>
+        <div class="item4"></div>
+       
+
+    </div>
+    
+</body>
+</html>
