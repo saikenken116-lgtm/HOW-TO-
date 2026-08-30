@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Pseudo-Classes & Pseudo-Elements Demo</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            width: 100%;
+            max-width: 1100px;
+        }
+
+        .card {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 24px;
+            min-height: 220px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        /* 1. :hover pseudo-class */
+        .card-hover:hover {
+            transform: translateY(-8px);
+            border-color: #38bdf8;
+            box-shadow: 0 12px 24px -10px rgba(56, 189, 248, 0.4);
+            background-color: #0c4a6e;
+        }
+
+        /* 2. :active pseudo-class */
+        .card-active:active {
+            transform: scale(0.95);
+            background-color: #065f46;
+            border-color: #34d399;
+        }
+
+        /* 3. ::before and ::after pseudo-elements */
+        .card-pseudo::before {
+            content: "TOP BADGE";
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            background-color: #f59e0b;
+            color: #78350f;
+            padding: 3px 8px;
+            border-radius: 999px;
+        }
+
+        .card-pseudo::after {
+            content: "★ ★ ★";
+            position: absolute;
+            bottom: 12px;
+            color: #fbbf24;
+            font-size: 14px;
+            letter-spacing: 4px;
+        }
+
+        /* 4. :focus-within pseudo-class */
+        .card-focus:focus-within {
+            border-color: #a855f7;
+            background-color: #3b0764;
+            box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.35);
+        }
+
+        .card-focus input {
+            margin-top: 12px;
+            padding: 8px 12px;
+            border-radius: 6px;
+            border: 1px solid #64748b;
+            background: #0f172a;
+            color: white;
+            outline: none;
+            width: 80%;
+        }
+
+        .card-focus input:focus {
+            border-color: #c084fc;
+        }
+
+        /* 5. ::first-letter & ::selection pseudo-elements */
+        .card-text p::first-letter {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: #f43f5e;
+            float: left;
+            line-height: 1;
+            margin-right: 6px;
+        }
+
+        .card-text p::selection {
+            background-color: #f43f5e;
+            color: #ffffff;
+        }
+
+        /* 6. Structural pseudo-class targeting (.container's last item) */
+        .container :last-child {
+            border-style: dashed;
+            border-color: #94a3b8;
+        }
+
+        .container :last-child:hover {
+            border-color: #facc15;
+            background-color: #422006;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: #e2e8f0;
+        }
+
+        p {
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Box 1: Hover State -->
+        <div class="card card-hover">
+            <h3>1. Hover Effect</h3>
+            <p>Hover over this box to trigger <code>:hover</code> styling and lift the card.</p>
+        </div>
+
+        <!-- Box 2: Active/Click State -->
+        <div class="card card-active">
+            <h3>2. Active State</h3>
+            <p>Click and hold down on this box to trigger the <code>:active</code> state.</p>
+        </div>
+
+        <!-- Box 3: Generated Content -->
+        <div class="card card-pseudo">
+            <h3>3. Before & After</h3>
+            <p>The badge and stars are injected via <code>::before</code> and <code>::after</code>.</p>
+        </div>
+
+        <!-- Box 4: Focus-Within State -->
+        <div class="card card-focus">
+            <h3>4. Focus Within</h3>
+            <p>Click the input field below to activate <code>:focus-within</code> on the parent div.</p>
+            <input type="text" placeholder="Click here...">
+        </div>
+
+        <!-- Box 5: Text Formatting Pseudo-elements -->
+        <div class="card card-text">
+            <h3>5. Letter & Selection</h3>
+            <p>Highlight this text to see custom <code>::selection</code> colors. Notice the large drop-cap from
+                <code>::first-letter</code>.</p>
+        </div>
+
+        <!-- Box 6: Structural Selector -->
+        <div class="card">
+            <h3>6. Structural</h3>
+            <p>Targeted purely with <code>:last-child</code> without adding a custom class name.</p>
+        </div>
+    </div>
+
+</body>
+
+</html>
